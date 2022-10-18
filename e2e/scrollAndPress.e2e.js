@@ -1,4 +1,4 @@
-describe('Example', () => {
+describe('Scroll And Press Repro', () => {
   const scrollByIDAndPressByText = id => async text => {
     await waitFor(element(by.text(text)))
       .toBeVisible()
