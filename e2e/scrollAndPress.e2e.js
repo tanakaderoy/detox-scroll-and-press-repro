@@ -20,9 +20,12 @@ describe('Scroll And Press Repro', () => {
   });
 
   it('should scroll to number 19 and increase count', async () => {
-    await expect(element(by.id('count'))).toBeVisible();
-    await expect(element(by.id('count'))).toHaveText('0');
-    await scrollByIDAndPressByText('Button_List')('Button #19');
-    await expect(element(by.id('count'))).toHaveText('1');
+    for (let i = 0; i < 50; i++) {
+      await expect(element(by.id('count'))).toBeVisible();
+      await expect(element(by.id('count'))).toHaveText('0');
+      await scrollByIDAndPressByText('Button_List')('Button #19');
+      await expect(element(by.id('count'))).toHaveText('1');
+      await reloadApp();
+    }
   });
 });

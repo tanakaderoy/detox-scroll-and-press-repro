@@ -1,7 +1,11 @@
 # detox-scroll-and-press-repro
+
 Repro of scrolling and pressing issue encountered with detox
 
-run 
+run
+
 ```
-for i in {1..50};do yarn e2e-run android.debug; done
+yarn install
+yarn start (separate terminal)
+yarn e2e-build android.debug && yarn e2e-run android.debug
 ```
